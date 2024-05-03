@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kubernetes Deployment</title>
+</head>
+<body>
+    <form action="/" method="post">
+        <label for="namespace">Namespace:</label>
+        <select id="namespace" name="namespace">
+            <option value="" disabled selected>Namespace Seçiniz</option>
+            {{range .Namespaces}}
+                <option value="{{.}}">{{.}}</option>
+            {{end}}
+        </select>
+        <br>
+        <button type="submit" name="action" value="pods">Podları Getir</button>
+        <button type="submit" name="action" value="deployments">Deploymentları Getir</button>
+        <button type="submit" name="action" value="svcs">Servisleri Getir</button>
+
+    </form>
+
+</body>
+</html>
+
